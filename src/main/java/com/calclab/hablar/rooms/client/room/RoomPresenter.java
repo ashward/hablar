@@ -66,7 +66,7 @@ public class RoomPresenter extends ChatPresenter implements RoomPage {
 				// Check if the occupant is found, and if they exist in the
 				// roster. We can then use their nickname
 				if ((occupant != null) && ((rosterItem = roster.getItemByJID(occupant.getJID())) != null)) {
-					if ((rosterItem.getName() != null) && (!rosterItem.getName().equals(""))) {
+					if ((rosterItem.getName() != null) && (!rosterItem.getName().isEmpty())) {
 						from = rosterItem.getName();
 					} else {
 						from = rosterItem.getJID().getShortName();
