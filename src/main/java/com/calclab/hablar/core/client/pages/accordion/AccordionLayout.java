@@ -5,11 +5,13 @@ import com.calclab.hablar.core.client.container.main.MainLayout;
 import com.calclab.hablar.core.client.page.Page;
 import com.calclab.hablar.core.client.pages.HeaderDisplay;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
 
 public class AccordionLayout extends MainLayout {
 	private static final double HEAD_SIZE = 24;
 	private static AccordionPanel accordion;
 
+	@Inject
 	public AccordionLayout(HablarDisplay display) {
 		super(accordion = new AccordionPanel(), display);
 	}

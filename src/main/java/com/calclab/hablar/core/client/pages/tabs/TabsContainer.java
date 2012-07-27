@@ -5,11 +5,13 @@ import com.calclab.hablar.core.client.mvp.HablarEventBus;
 import com.calclab.hablar.core.client.page.Page;
 import com.calclab.hablar.core.client.page.PagePresenter.Visibility;
 import com.google.gwt.core.client.GWT;
+import com.google.inject.Inject;
 
 public class TabsContainer extends MainContainer {
 
 	private final TabsMenuPresenter tabsMenuPresenter;
 
+	@Inject
 	public TabsContainer(final HablarEventBus eventBus, final TabsLayout layout) {
 		super(eventBus, layout);
 		tabsMenuPresenter = layout.getTabsMenuPresenter();

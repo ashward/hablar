@@ -36,7 +36,7 @@
 
     <g:HTMLPanel addStyleNames="{style.userWidget} hablar-SearchResultItemWidget hablar-bottomLightBordered">
         <g:Image addStyleNames="{style.icon}" ui:field="buddyIcon" resource="{res.buddyIcon}" />
-    	<g:Image addStyleNames="{style.icon} {style.avatar}" ui:field="avatar" url="" />
+    	<g:Image addStyleNames="{style.icon} {style.avatar} avatar avatar-tiny" ui:field="avatar" url="" />
         <g:Label ui:field="name" addStyleNames="{style.name} name">Result</g:Label>
         <g:Label ui:field="jid" addStyleNames="{style.xmppUri} hablar-lightColor">JID</g:Label>
         <g:Image ui:field="menu" addStyleNames="{style.userWidgetMenu}" resource="{res.menuIcon}" />

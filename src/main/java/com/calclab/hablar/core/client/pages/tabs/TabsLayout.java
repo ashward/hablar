@@ -2,11 +2,13 @@ package com.calclab.hablar.core.client.pages.tabs;
 
 import static com.google.gwt.dom.client.Style.Unit.PX;
 
+import com.calclab.hablar.client.HablarConfig;
 import com.calclab.hablar.core.client.HablarDisplay;
 import com.calclab.hablar.core.client.container.main.MainLayout;
 import com.calclab.hablar.core.client.page.Page;
 import com.calclab.hablar.core.client.pages.HeaderDisplay;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
 
 public class TabsLayout extends MainLayout {
 
@@ -63,6 +65,11 @@ public class TabsLayout extends MainLayout {
 
 	private final TabHeaderSize tabHeaderSize;
 
+	@Inject
+	public TabsLayout(final HablarDisplay parent, final HablarConfig config) {
+		this(parent, config.tabHeaderSize == null ? TabHeaderSize.DEFAULT_SIZE : config.tabHeaderSize);
+	}
+	
 	public TabsLayout(final HablarDisplay parent) {
 		this(parent, TabHeaderSize.DEFAULT_SIZE);
 	}

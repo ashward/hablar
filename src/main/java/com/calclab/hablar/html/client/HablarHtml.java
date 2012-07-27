@@ -70,8 +70,12 @@ public class HablarHtml implements EntryPoint {
 		final HablarConfig config = HablarConfig.getFromMeta();
 		final HtmlConfig htmlConfig = HtmlConfig.getFromMeta();
 		htmlConfig.hasLogger = true;
-		final HablarWidget widget = new HablarWidget(config.layout, config.tabHeaderSize);
-		final Hablar hablar = widget.getHablar();
+		
+//		final HablarWidget widget = new HablarWidget(config.layout, config.tabHeaderSize);
+//		final Hablar hablar = widget.getHablar();
+		
+		final Hablar hablar = ginjector.getHablar();
+		final HablarWidget widget = ginjector.getHablarWidget();
 
 		final XmppSession session = ginjector.getXmppSession();
 		final XmppRoster roster = ginjector.getXmppRoster();
@@ -79,8 +83,10 @@ public class HablarHtml implements EntryPoint {
 		final RoomManager roomManager = ginjector.getRoomManager();
 		final AvatarProviderRegistry registry = ginjector.getAvatarProviderRegistry();
 
-		new HablarCore(hablar);
-		new HablarChat(hablar, config.chatConfig, roster, chatManager, ginjector.getStateManager(), registry);
+		// Initialise the HablarCore module
+		ginjector.getHablarCore();
+		ginjector.getHablarChat();
+
 		new HablarRooms(hablar, config.roomsConfig, session, roster, roomManager, ginjector.getRoomDiscoveryManager(), ginjector.getMUCChatStateManager(), registry);
 		new HablarGroupChat(hablar, config.roomsConfig, session, roster, chatManager, roomManager);
 		new HablarDock(hablar, config.dockConfig);

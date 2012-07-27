@@ -14,6 +14,10 @@ import com.calclab.emite.xep.mucdisco.client.RoomDiscoveryManager;
 import com.calclab.emite.xep.search.client.SearchManager;
 import com.calclab.emite.xep.storage.client.PrivateStorageManager;
 import com.calclab.emite.xep.vcard.client.VCardManager;
+import com.calclab.hablar.chat.client.HablarChat;
+import com.calclab.hablar.core.client.Hablar;
+import com.calclab.hablar.core.client.HablarCore;
+import com.calclab.hablar.core.client.HablarWidget;
 import com.calclab.hablar.icons.client.AvatarProviderRegistry;
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
@@ -21,6 +25,8 @@ import com.google.gwt.inject.client.Ginjector;
 @GinModules({ HablarModule.class, BrowserModule.class })
 public interface HablarGinjector extends Ginjector {
 
+	Hablar getHablar();
+	
 	XmppConnection getXmppConnection();
 
 	XmppSession getXmppSession();
@@ -49,4 +55,9 @@ public interface HablarGinjector extends Ginjector {
     
     AvatarProviderRegistry getAvatarProviderRegistry();
 
+	HablarCore getHablarCore();
+
+	HablarWidget getHablarWidget();
+
+	HablarChat getHablarChat();
 }

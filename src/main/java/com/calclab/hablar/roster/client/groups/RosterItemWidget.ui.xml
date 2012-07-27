@@ -65,7 +65,7 @@
 				<g:Image resource="{res.menuIcon}" ui:field="menu"
 					addStyleNames="menu" />
 				<span style="width: 24px; height: 24px; position: absolute">
-					<g:Image url="" ui:field="avatar" addStyleNames="icon {style.avatar}"/>
+					<g:Image url="" ui:field="avatar" addStyleNames="icon avatar avatar-tiny {style.avatar}"/>
 				</span>
 				<div class="{style.dataOuter}">
 					<div class="{style.data} ellipsis" ui:field="data">

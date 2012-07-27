@@ -13,9 +13,11 @@ import com.calclab.hablar.core.client.container.PageAddedEvent;
 import com.calclab.hablar.core.client.container.PageAddedHandler;
 import com.calclab.hablar.core.client.ui.emoticons.EmoticonsChatMessageFormatReplacements;
 import com.calclab.hablar.icons.client.AvatarProviderRegistry;
+import com.google.inject.Inject;
 
 public class HablarChat {
 
+	@Inject
 	public HablarChat(final Hablar hablar, final ChatConfig chatConfig, final XmppRoster roster,
 			final ChatManager chatManager, final StateManager stateManager, final AvatarProviderRegistry avatarProviderRegistry) {
         // Set up the message replacements

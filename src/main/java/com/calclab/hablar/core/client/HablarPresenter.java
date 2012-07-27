@@ -16,6 +16,7 @@ import com.calclab.hablar.core.client.pages.accordion.AccordionLayout;
 import com.calclab.hablar.core.client.pages.tabs.TabsContainer;
 import com.calclab.hablar.core.client.pages.tabs.TabsLayout;
 import com.calclab.hablar.core.client.pages.tabs.TabsLayout.TabHeaderSize;
+import com.google.inject.Inject;
 
 public class HablarPresenter implements Hablar {
 	public static HablarPresenter createAccordionPresenter(final HablarEventBus eventBus, final HablarDisplay display) {
